@@ -30,7 +30,8 @@ RUN chgrp -R ospd-openvas /etc/openvas/ && \
 
 COPY . /ospd-openvas
 
-RUN python3 -m pip install /ospd-openvas/*
+WORKDIR /ospd-openvas/
+RUN python3 -m pip install .
 
 ENTRYPOINT ["/usr/local/bin/entrypoint"]
 
