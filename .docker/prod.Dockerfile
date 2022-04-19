@@ -28,7 +28,7 @@ RUN chgrp -R ospd-openvas /etc/openvas/ && \
     chmod 644 /etc/openvas/openvas_log.conf && \
     chmod 755 /usr/local/bin/entrypoint
 
-COPY dist/* /ospd-openvas
+COPY . /ospd-openvas
 
 RUN python3 -m pip install /ospd-openvas/*
 
